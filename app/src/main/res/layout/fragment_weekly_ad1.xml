@@ -5,9 +5,19 @@
     tools:context="com.proj.software.seproj.WeeklyAd1">
 
     <!-- TODO: Update blank fragment layout -->
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="WEEKLY ADD GOES HERE NOW" />
+        android:text="@string/WeeklyAd"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/screen480x480" />
 
 </FrameLayout>
