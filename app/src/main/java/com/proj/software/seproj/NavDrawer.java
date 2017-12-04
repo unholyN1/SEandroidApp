@@ -1,8 +1,12 @@
 package com.proj.software.seproj;
+import android.net.Uri;
+import android.support.v4.app.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.FragmentManager;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -12,16 +16,43 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 public class NavDrawer extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, annouce.OnFragmentInteractionListener,
+        WeeklyAd1.OnFragmentInteractionListener {
+
+    @Override
+    public void onFragmentInteraction(Uri uri){
+        //you can leave it empty
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nav_drawer);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+
+
+        Fragment fragment = null;
+        Class fragmentClass = null;
+        fragmentClass = annouce.class;
+        //LOADS THE DEFAULT FRAGMENT CONTENT PAGE
+        try {
+            fragment = (Fragment) fragmentClass.newInstance();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction().replace(R.id.flContent, fragment).commit();
+
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -79,10 +110,20 @@ public class NavDrawer extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
+        Fragment fragment = null;
+        Class fragmentClass = null;
 
         if (id == R.id.nav_camera) {
-            // Handle the camera action
+            // Announcements page
+            fragmentClass = annouce.class;
+            //i cant spell announce sorry
         } else if (id == R.id.nav_gallery) {
+            //go to weekly ad page
+            //startActivity(new Intent(getApplicationContext(), WeeklyAd.class));
+            //WEEKLYADD
+            fragmentClass = WeeklyAd1.class;
+
+
 
         } else if (id == R.id.nav_slideshow) {
 
@@ -93,6 +134,15 @@ public class NavDrawer extends AppCompatActivity
         } else if (id == R.id.nav_send) {
 
         }
+
+
+        try {
+            fragment = (Fragment) fragmentClass.newInstance();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction().replace(R.id.flContent, fragment).commit();
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
