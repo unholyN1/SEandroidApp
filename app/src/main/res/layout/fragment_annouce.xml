@@ -21,17 +21,43 @@
         android:layout_height="200dp"
         android:src="@drawable/announcements_0" />
 
+    <EditText android:id="@+id/textview11"
+        android:layout_width="400dp"
+        android:layout_height="450dp"
+        android:layout_margin="@dimen/activity_horizontal_margin"
+        android:ems="10"
+        android:inputType="text"
+        android:lines="2"
+        android:maxLines="10"
+        android:singleLine="false"
+        android:text="have the best groceries in town"
+        android:textAppearance="@style/TextAppearance.AppCompat"  />
+
     <EditText
         android:id="@+id/editText"
         android:layout_width="400dp"
         android:layout_height="400dp"
         android:layout_margin="@dimen/activity_horizontal_margin"
         android:ems="10"
-        android:inputType="date"
+        android:inputType="text"
         android:lines="2"
         android:maxLines="10"
         android:singleLine="false"
-        android:text="In 1842 we opened our store. And since then we still have the best value"
+        android:text="In 1842 we opened our store. And since then we still have the"
+        android:textAppearance="@style/TextAppearance.AppCompat" />
+
+    <EditText
+        android:id="@+id/editText11"
+        android:layout_width="400dp"
+        android:layout_height="700dp"
+        android:layout_margin="@dimen/activity_horizontal_margin"
+        android:ems="10"
+        android:inputType="text"
+        android:lines="2"
+        android:maxLines="10"
+        android:textStyle="bold"
+        android:singleLine="false"
+        android:text="IMPORTANT:LOAVES OF BREAD TODAY ONLY HALF OFF!!!"
         android:textAppearance="@style/TextAppearance.AppCompat" />
 
 </FrameLayout>
