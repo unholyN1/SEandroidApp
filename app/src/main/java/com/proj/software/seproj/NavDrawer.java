@@ -20,7 +20,8 @@ import android.widget.Toast;
 
 public class NavDrawer extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, annouce.OnFragmentInteractionListener,
-        WeeklyAd1.OnFragmentInteractionListener {
+        WeeklyAd1.OnFragmentInteractionListener, contact.OnFragmentInteractionListener, home.OnFragmentInteractionListener,
+        createOrder.OnFragmentInteractionListener {
 
     @Override
     public void onFragmentInteraction(Uri uri){
@@ -42,7 +43,8 @@ public class NavDrawer extends AppCompatActivity
 
         Fragment fragment = null;
         Class fragmentClass = null;
-        fragmentClass = annouce.class;
+        //Default Fragment content page
+        fragmentClass = home.class;
         //LOADS THE DEFAULT FRAGMENT CONTENT PAGE
         try {
             fragment = (Fragment) fragmentClass.newInstance();
@@ -113,26 +115,24 @@ public class NavDrawer extends AppCompatActivity
         Fragment fragment = null;
         Class fragmentClass = null;
 
-        if (id == R.id.nav_camera) {
-            // Announcements page
-            fragmentClass = annouce.class;
-            //i cant spell announce sorry
+        if (id == R.id.nav_share) {
+            //Go to Home Page
+            fragmentClass = home.class;
         } else if (id == R.id.nav_gallery) {
             //go to weekly ad page
             //startActivity(new Intent(getApplicationContext(), WeeklyAd.class));
-            //WEEKLYADD
+            //WEEKLY AD
             fragmentClass = WeeklyAd1.class;
-
-
-
+        } else if (id == R.id.nav_camera) {
+            // Announcements page
+            fragmentClass = annouce.class;
+            //i cant spell announce sorry
         } else if (id == R.id.nav_slideshow) {
-
+            //Create an Order Page
+            fragmentClass = createOrder.class;
         } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
+        //Go to Contact page
+            fragmentClass = contact.class;
         }
 
 
