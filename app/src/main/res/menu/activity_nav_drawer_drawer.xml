@@ -6,24 +6,29 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_share"
+            android:icon="@drawable/homeicon"
             android:title="Home" />
-            <!--android:icon="@drawable/ic_menu_share"-->
+
         <item
             android:id="@+id/nav_gallery"
+            android:icon="@drawable/weeklyad"
             android:title="Weekly Ad" />
-            <!--android:icon="@drawable/ic_menu_gallery"-->
+
         <item
             android:id="@+id/nav_slideshow"
+            android:icon="@drawable/cartmenu"
             android:title="Create an Order" />
-            <!--android:icon="@drawable/ic_menu_slideshow"-->
+
         <item
             android:id="@+id/nav_camera"
+            android:icon="@drawable/announceicon"
             android:title="Announcements" />
-            <!--android:icon="@drawable/ic_menu_camera"-->
+
         <item
             android:id="@+id/nav_manage"
+            android:icon="@drawable/contacticon"
             android:title="Contact" />
-            <!--android:icon="@drawable/ic_menu_manage"-->
+
     </group>
 
 <!--    <item android:title="Communicate">
