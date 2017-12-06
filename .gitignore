@@ -30,3 +30,13 @@ proguard/
 
 # Android Studio captures folder
 captures/
+
+# Intellij IDEA (see https://intellij-support.jetbrains.com/entries/23393067)
+*.iws
+.idea/libraries
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/datasources.xml
+.idea/dataSources.ids
+local.properties
+*.iml
