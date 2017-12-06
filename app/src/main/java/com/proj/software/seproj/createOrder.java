@@ -105,4 +105,19 @@ public class createOrder extends Fragment {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }
+
+    public void onCheckboxClicked(View view) {
+        // Is the view now checked?
+        boolean checked = ((android.widget.CheckBox) view).isChecked();
+
+        // Check which checkbox was clicked
+        switch(view.getId()) {
+            case R.id.checkbox:
+                if (checked) {
+                    // Put some meat on the sandwich
+                } else {
+
+                }
+        }
+    }
 }

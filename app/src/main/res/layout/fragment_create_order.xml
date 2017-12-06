@@ -23,6 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:layout_marginLeft="325dp"
+        android:checked="false"
         />
 
     <TextView
@@ -121,7 +122,15 @@
         android:layout_marginLeft="285dp"
         />
 
-
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Test"
+        android:layout_marginTop="475dp"
+        android:layout_marginLeft="285dp"
+        android:onClick="onCheckboxClicked"
+        />
 
 
 </FrameLayout>
