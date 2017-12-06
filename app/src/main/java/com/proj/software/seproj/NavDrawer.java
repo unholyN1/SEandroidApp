@@ -60,7 +60,7 @@ public class NavDrawer extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "This could be a login/cart button", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });
@@ -95,7 +95,7 @@ public class NavDrawer extends AppCompatActivity
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
+        // automatically handle clicks on the home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
@@ -116,7 +116,7 @@ public class NavDrawer extends AppCompatActivity
         Class fragmentClass = null;
 
         if (id == R.id.nav_share) {
-            //Go to Home Page
+            //Go to home Page
             fragmentClass = home.class;
         } else if (id == R.id.nav_gallery) {
             //go to weekly ad page
@@ -131,7 +131,7 @@ public class NavDrawer extends AppCompatActivity
             //Create an Order Page
             fragmentClass = createOrder.class;
         } else if (id == R.id.nav_manage) {
-        //Go to Contact page
+        //Go to contact page
             fragmentClass = contact.class;
         }
 
@@ -147,5 +147,26 @@ public class NavDrawer extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    // Dials Number in contact Fragment
+    public void callNumber(View view) {
+        Uri number = Uri.parse("tel:5555555555");
+        Intent callIntent = new Intent(Intent.ACTION_DIAL, number);
+        startActivity(callIntent);
+    }
+
+    // Sends email in contact Fragment
+    public void sendEmail(View view) {
+        Intent i = new Intent(Intent.ACTION_SEND);
+        i.setType("message/rfc822");
+        i.putExtra(Intent.EXTRA_EMAIL , new String[]{"fakeaddress@fakeemail.com"});
+        i.putExtra(Intent.EXTRA_SUBJECT, "Your store and app is the best :)");
+        i.putExtra(Intent.EXTRA_TEXT , "It really is!");
+        try {
+            startActivity(Intent.createChooser(i, "Send mail..."));
+        } catch (android.content.ActivityNotFoundException ex) {
+            Toast.makeText(NavDrawer.this, "There are no email clients installed.", Toast.LENGTH_SHORT).show();
+        }
     }
 }
