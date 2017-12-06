@@ -1,4 +1,5 @@
 package com.proj.software.seproj;
+import android.app.FragmentTransaction;
 import android.net.Uri;
 import android.support.v4.app.Fragment;
 
@@ -56,6 +57,8 @@ public class NavDrawer extends AppCompatActivity
         fragmentManager.beginTransaction().replace(R.id.flContent, fragment).commit();
 
 
+
+
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -81,7 +84,15 @@ public class NavDrawer extends AppCompatActivity
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            super.onBackPressed();
+
+            FragmentManager fm = getSupportFragmentManager();
+            if (fm.getBackStackEntryCount() > 0) {
+
+                fm.popBackStack();
+            } else {
+
+                super.onBackPressed();
+            }
         }
     }
 
@@ -142,7 +153,9 @@ public class NavDrawer extends AppCompatActivity
             e.printStackTrace();
         }
         FragmentManager fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction().replace(R.id.flContent, fragment).commit();
+        //fragmentManager.addToBackStack
+
+        fragmentManager.beginTransaction().addToBackStack(null).replace(R.id.flContent, fragment).commit();
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
