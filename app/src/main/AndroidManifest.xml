@@ -5,6 +5,7 @@
     <!-- To access Google+ APIs: -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -27,6 +28,7 @@
             android:name=".WeeklyAd"
             android:label="@string/title_activity_weekly_ad"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".WeeklyAd2"></activity>
     </application>
 
 </manifest>

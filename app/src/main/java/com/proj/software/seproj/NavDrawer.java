@@ -1,8 +1,6 @@
 package com.proj.software.seproj;
-import android.app.FragmentTransaction;
 import android.net.Uri;
 import android.support.v4.app.Fragment;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -18,11 +16,13 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
+import com.github.barteksc.pdfviewer.PDFView;
 
 public class NavDrawer extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, annouce.OnFragmentInteractionListener,
         WeeklyAd1.OnFragmentInteractionListener, contact.OnFragmentInteractionListener, home.OnFragmentInteractionListener,
         createOrder.OnFragmentInteractionListener {
+    PDFView pdfView;
 
     @Override
     public void onFragmentInteraction(Uri uri){
@@ -32,14 +32,11 @@ public class NavDrawer extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-
-
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nav_drawer);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
 
 
         Fragment fragment = null;
@@ -173,7 +170,7 @@ public class NavDrawer extends AppCompatActivity
     public void sendEmail(View view) {
         Intent i = new Intent(Intent.ACTION_SEND);
         i.setType("message/rfc822");
-        i.putExtra(Intent.EXTRA_EMAIL , new String[]{"fakeaddress@fakeemail.com"});
+        i.putExtra(Intent.EXTRA_EMAIL , new String[]{"fakestore@fakestore.com"});
         i.putExtra(Intent.EXTRA_SUBJECT, "Your store and app is the best :)");
         i.putExtra(Intent.EXTRA_TEXT , "It really is!");
         try {
@@ -181,5 +178,10 @@ public class NavDrawer extends AppCompatActivity
         } catch (android.content.ActivityNotFoundException ex) {
             Toast.makeText(NavDrawer.this, "There are no email clients installed.", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    //starts WeeklyAd2 activity that has PDF viewer
+    public void viewWeeklyAd(View view) {
+        startActivity(new Intent(NavDrawer.this, WeeklyAd2.class));
     }
 }

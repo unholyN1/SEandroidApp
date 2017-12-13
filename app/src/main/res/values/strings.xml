@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SEPROJ</string>
+    <string name="app_name">SE Project: Grocery Store App</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -101,5 +101,6 @@
     <string name="WeeklyAd">Weekly Ad</string>
     <string name="homeHeader">Generic Grocery Store App</string>
     <string name="contactPhoneNumber">555-555-5555</string>
-    <string name="contactEmail">fakeAddress@fakeemail.com</string>
+    <string name="contactEmail">fakestore@fakestore.com</string>
+    <string name="clickWeeklyAd">Click on the Image below to view the Weekly Ad!</string>
 </resources>
