@@ -25,12 +25,12 @@
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="400dp"
+        android:layout_width="350dp"
         android:layout_height="300dp"
         android:src="@drawable/announcements_0" />
 
     <TextView android:id="@+id/textview11"
-        android:layout_width="400dp"
+        android:layout_width="350dp"
         android:layout_height="20dp"
         android:layout_margin="@dimen/activity_horizontal_margin"
         android:ems="10"
@@ -56,7 +56,7 @@
 
     <TextView
         android:id="@+id/editText11"
-        android:layout_width="400dp"
+        android:layout_width="350dp"
         android:layout_height="match_parent"
         android:layout_margin="@dimen/activity_horizontal_margin"
         android:ems="10"
@@ -65,11 +65,11 @@
         android:maxLines="10"
         android:textStyle="bold"
         android:singleLine="false"
-        android:text="IMPORTANT:LOAVES OF BREAD TODAY ONLY HALF OFF!!!"
+        android:text="IMPORTANT:TODAY ONLY, BREAD HALF OFF!!!"
         android:textAppearance="@style/TextAppearance.AppCompat" />
         <ImageView
             android:id="@+id/imageView7"
-            android:layout_width="400dp"
+            android:layout_width="350dp"
             android:layout_height="300dp"
             android:src="@drawable/oldstore" />
         <TextView
