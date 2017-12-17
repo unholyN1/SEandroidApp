@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 
+
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
@@ -28,6 +29,8 @@ public class createOrder extends Fragment {
     private String mParam2;
 
     private OnFragmentInteractionListener mListener;
+
+
 
     public createOrder() {
         // Required empty public constructor

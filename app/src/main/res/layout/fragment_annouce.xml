@@ -5,7 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".annouce">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
     <com.google.android.gms.plus.PlusOneButton
         android:id="@+id/plus_one_button"
         android:layout_width="wrap_content"
@@ -17,39 +25,39 @@
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="400dp"
+        android:layout_height="300dp"
         android:src="@drawable/announcements_0" />
 
-    <EditText android:id="@+id/textview11"
+    <TextView android:id="@+id/textview11"
         android:layout_width="400dp"
-        android:layout_height="450dp"
+        android:layout_height="20dp"
         android:layout_margin="@dimen/activity_horizontal_margin"
         android:ems="10"
         android:inputType="text"
         android:lines="2"
         android:maxLines="10"
         android:singleLine="false"
-        android:text="have the best groceries in town"
+        android:text="In 1842 we opened our store. And since then we still"
         android:textAppearance="@style/TextAppearance.AppCompat"  />
 
-    <EditText
+    <TextView
         android:id="@+id/editText"
-        android:layout_width="400dp"
-        android:layout_height="400dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_margin="@dimen/activity_horizontal_margin"
         android:ems="10"
         android:inputType="text"
         android:lines="2"
         android:maxLines="10"
         android:singleLine="false"
-        android:text="In 1842 we opened our store. And since then we still have the"
+        android:text=" have the the best grocieries in town"
         android:textAppearance="@style/TextAppearance.AppCompat" />
 
-    <EditText
+    <TextView
         android:id="@+id/editText11"
         android:layout_width="400dp"
-        android:layout_height="700dp"
+        android:layout_height="match_parent"
         android:layout_margin="@dimen/activity_horizontal_margin"
         android:ems="10"
         android:inputType="text"
@@ -59,5 +67,23 @@
         android:singleLine="false"
         android:text="IMPORTANT:LOAVES OF BREAD TODAY ONLY HALF OFF!!!"
         android:textAppearance="@style/TextAppearance.AppCompat" />
-
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="400dp"
+            android:layout_height="300dp"
+            android:src="@drawable/oldstore" />
+        <TextView
+            android:id="@+id/editText3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            android:ems="10"
+            android:inputType="text"
+            android:lines="2"
+            android:maxLines="10"
+            android:singleLine="false"
+            android:text=" Come visit us soon!"
+            android:textAppearance="@style/TextAppearance.AppCompat" />
+    </LinearLayout>
+    </ScrollView>
 </FrameLayout>
